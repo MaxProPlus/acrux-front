@@ -1,0 +1,262 @@
+@font-face {
+    font-family: Acrobat-Black;
+    src: url("../font/Akrobat-Black.eot");
+    src: url("../font/Akrobat-Black.eot?#iefix") format("embedded-opentype"),
+    url("../font/Akrobat-Black.woff") format("woff");
+    font-family: Acrobat-light;
+    src: url("../font/Akrobat-Light.eot");
+    src: url("../font/Akrobat-Light.eot?#iefix") format("embedded-opentype"),
+    url("../font/Akrobat-Light.woff") format("woff");
+}
+
+html, body, .page, .main, .nav {
+    height: 100%;
+    line-height: normal;
+}
+
+body {
+    font-family: "Acrobat-Black", "Acrobat-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    background: #18171a;
+}
+
+/* Кнопка меню */
+.menu {
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.menu::before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 3px solid rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    animation: grow 1s linear infinite;
+}
+
+.menu-show::before {
+    animation: grow-dark 1s linear infinite;
+}
+
+@keyframes grow {
+    0% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-color: rgba(255, 255, 255, 1);
+    }
+    100% {
+        top: -16px;
+        left: -16px;
+        right: -16px;
+        bottom: -16px;
+        border-color: rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes grow-dark {
+    0% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-color: rgba(0, 0, 0, .6);
+    }
+    100% {
+        top: -16px;
+        left: -16px;
+        right: -16px;
+        bottom: -16px;
+        border-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.menu > img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    max-width: 100%;
+    transition: max-width .6s ease;
+}
+
+.hidden-icon {
+    max-width: 0 !important;
+    max-height: 0;
+}
+
+.logo {
+    padding: 30px;
+    max-width: 70%;
+}
+
+.logo > img {
+    max-width: 100%;
+}
+
+/* Страница */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 100%;
+    transition: max-height .9s ease;
+    background: #18171a;
+}
+
+.block-title {
+    flex-grow: 1;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Acrobat-Black";
+    font-size: 25px;
+    font-weight: 700;
+    padding: 7px 30px;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.social {
+    align-self: flex-start;
+    display: block;
+    padding: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: background-color .3s ease;
+}
+
+.social:hover {
+    background: #2836d9;
+}
+
+.social > img {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 1.2em;
+}
+
+.information__block {
+    padding-left: 30px;
+}
+
+.information-block__contact {
+    align-self: flex-start;
+}
+
+.information-block__sign {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 282px;
+    font-size: 0.85em;
+    font-family: "Acrobat-light";
+    text-align: end;
+}
+
+.information-block__sign > p {
+    margin: 0;
+}
+
+.information-block__sign::before {
+    content: 'EU PROJECTS';
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    transition: max-height .9s ease;
+    background: #cbcbcb;
+}
+
+.nav>ul {
+    list-style: none;
+}
+
+.nav>ul>li {
+
+}
+
+.nav>ul>li>a {
+    display: block;
+    color: #171616;
+    font-family: "Acrobat-Black";
+    font-size: 3vmax;
+    font-weight: 700;
+    margin: 0.25em 0;
+    text-decoration: none;
+}
+
+.nav>ul>li>a:hover {
+    color: #FFF;
+}
+
+
+.hidden {
+    max-height: 0;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .menu {
+        padding: 15px;
+    }
+    .block-title {
+        font-size: 50px;
+    }
+
+    .social > img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer {
+        flex-direction: row;
+    }
+
+    .information-block__contact {
+        align-self: flex-end;
+    }
+
+    .social {
+        align-self: flex-end;
+    }
+
+    .information {
+        flex-direction: row;
+    }
+}

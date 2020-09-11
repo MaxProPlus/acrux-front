@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+<div class="main">
+    <form id="logo">
+        <label>
+            Загрузить новое лого:
+            <input type="file" id="file">
+        </label>
+        <button>Загрузить</button>
+    </form>
+    <form id="info">
+        <label>
+            Заголовок:
+            <input id="title" type="text" placeholder="Введите заголовок">
+        </label>
+        <label>
+            Описание:
+            <input id="description" type="text" placeholder="Введите описание">
+        </label>
+        <button>Загрузить</button>
+    </form>
+
+    <table id="table">
+        <tr>
+            <th>#</th>
+            <th>ip</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>102</td>
+        </tr>
+    </table>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>
